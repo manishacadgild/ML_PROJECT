@@ -1,8 +1,9 @@
-flask
-pandas
+Flask
 numpy
+pandas
 seaborn
 scikit-learn
 catboost
 xgboost
+dill
 #-e .
