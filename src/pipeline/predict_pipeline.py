@@ -1,12 +1,13 @@
-import sys
+import sys,os
 import pandas as pd
 from src.exception import StudentException
 from src.utils import load_object
-import os
+
 
 class PredictPipeline:
     def __init__(self):
         pass
+
     def predict(self,features):
         try:
             model_path=os.path.join("artifacts","model.pkl")
