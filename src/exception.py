@@ -11,7 +11,7 @@ def error_message_detail(error,error_detail:sys):
 
     
 
-class CustomException(Exception):
+class StudentException(Exception):
     def __init__(self,error_message,error_detail:sys):
         super().__init__(error_message)
         self.error_message=error_message_detail(error_message,error_detail=error_detail)
@@ -19,6 +19,14 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
     
+    def __repr__(self) -> str:
+        return StudentException.__name__.str()
 
-
+if __name__=='__main__':
+    try:
+        a=1/0
         
+    except Exception as e:
+        logging.info("Divided by zero exception")
+        raise StudentException(e, sys)
+    
